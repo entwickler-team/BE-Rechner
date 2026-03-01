@@ -16,54 +16,155 @@
         h1 { color: #0D47A1; }
         h2 { color: #1565C0; margin-top: 32px; }
         .footer { margin-top: 48px; font-size: 0.85em; color: #888; }
+
+        /* Language Switch */
+        .lang-switch {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 24px;
+        }
+        .lang-switch button {
+            padding: 8px 20px;
+            border: 2px solid #0D47A1;
+            background: white;
+            color: #0D47A1;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .lang-switch button:first-child {
+            border-radius: 6px 0 0 6px;
+        }
+        .lang-switch button:last-child {
+            border-radius: 0 6px 6px 0;
+            border-left: none;
+        }
+        .lang-switch button.active {
+            background: #0D47A1;
+            color: white;
+        }
+        .lang-switch button:hover:not(.active) {
+            background: #E3F2FD;
+        }
+
+        /* Language sections */
+        #content-en { display: none; }
+        #content-de { display: block; }
     </style>
 </head>
 <body>
 
-<h1>Datenschutzerklärung</h1>
-<p><strong>BE-Rechner</strong> – Der einfache Broteinheiten-Rechner für Diabetiker</p>
+    <!-- Language Switch -->
+    <div class="lang-switch">
+        <button id="btn-de" class="active" onclick="setLang('de')">Deutsch</button>
+        <button id="btn-en" onclick="setLang('en')">English</button>
+    </div>
 
-<h2>1. Verantwortlicher</h2>
-<p>
-    Alexander Nießen<br>
-    E-Mail: entwickler-team@gmx.de
-</p>
+    <!-- DEUTSCH -->
+    <div id="content-de">
+        <h1>Datenschutzerklärung</h1>
+        <p><strong>BE-Rechner</strong> – Der einfache Broteinheiten-Rechner für Diabetiker</p>
 
-<h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
-<p>
-    Diese App erhebt <strong>keine personenbezogenen Daten</strong>. 
-    Es werden keine Nutzerdaten gesammelt, gespeichert, übertragen oder 
-    an Dritte weitergegeben.
-</p>
+        <h2>1. Verantwortlicher</h2>
+        <p>
+            Alexander Nießen<br>
+            E-Mail: <a href="mailto:entwickler-team@gmx.de">entwickler-team@gmx.de</a>
+        </p>
 
-<h2>3. Internetverbindung</h2>
-<p>
-    Die App benötigt <strong>keine Internetverbindung</strong>. 
-    Alle Berechnungen erfolgen ausschließlich lokal auf Ihrem Gerät.
-</p>
+        <h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
+        <p>
+            Diese App erhebt <strong>keine personenbezogenen Daten</strong>.
+            Es werden keine Nutzerdaten gesammelt, gespeichert, übertragen oder
+            an Dritte weitergegeben.
+        </p>
 
-<h2>4. Gespeicherte Einstellungen</h2>
-<p>
-    Die App speichert lediglich Ihre Darstellungseinstellung (Hell-/Dunkelmodus) 
-    lokal auf Ihrem Gerät mittels Android SharedPreferences. 
-    Diese Daten verlassen Ihr Gerät zu keinem Zeitpunkt.
-</p>
+        <h2>3. Internetverbindung</h2>
+        <p>
+            Die App benötigt <strong>keine Internetverbindung</strong>.
+            Alle Berechnungen erfolgen ausschließlich lokal auf Ihrem Gerät.
+        </p>
 
-<h2>5. Drittanbieter & Analytics</h2>
-<p>
-    Die App verwendet <strong>keine</strong> Analyse-Dienste, 
-    Tracking-Tools, Werbebibliotheken oder Dienste von Drittanbietern.
-</p>
+        <h2>4. Gespeicherte Einstellungen</h2>
+        <p>
+            Die App speichert lediglich Ihre Darstellungseinstellung (Hell-/Dunkelmodus)
+            lokal auf Ihrem Gerät mittels Android SharedPreferences.
+            Diese Daten verlassen Ihr Gerät zu keinem Zeitpunkt.
+        </p>
 
-<h2>6. Kontakt</h2>
-<p>
-    Bei Fragen zur Datenschutzerklärung wenden Sie sich bitte an:<br>
-    <a href="mailto:entwickler-team@gmx.de">entwickler-team@gmx.de</a>
-</p>
+        <h2>5. Drittanbieter &amp; Analytics</h2>
+        <p>
+            Die App verwendet <strong>keine</strong> Analyse-Dienste,
+            Tracking-Tools, Werbebibliotheken oder Dienste von Drittanbietern.
+        </p>
 
-<div class="footer">
-    <p>© 2026 Alexander Nießen · Stand: März 2026</p>
-</div>
+        <h2>6. Kontakt</h2>
+        <p>
+            Bei Fragen zur Datenschutzerklärung wenden Sie sich bitte an:<br>
+            <a href="mailto:entwickler-team@gmx.de">entwickler-team@gmx.de</a>
+        </p>
+
+        <div class="footer">
+            <p>© 2026 Alexander Nießen · Stand: März 2026</p>
+        </div>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="content-en">
+        <h1>Privacy Policy</h1>
+        <p><strong>BE-Rechner</strong> – The simple bread unit calculator for diabetics</p>
+
+        <h2>1. Controller</h2>
+        <p>
+            Alexander Nießen<br>
+            E-Mail: <a href="mailto:entwickler-team@gmx.de">entwickler-team@gmx.de</a>
+        </p>
+
+        <h2>2. Collection and Storage of Personal Data</h2>
+        <p>
+            This app does <strong>not collect any personal data</strong>.
+            No user data is gathered, stored, transmitted, or shared with third parties.
+        </p>
+
+        <h2>3. Internet Connection</h2>
+        <p>
+            This app <strong>does not require an internet connection</strong>.
+            All calculations are performed exclusively on your local device.
+        </p>
+
+        <h2>4. Stored Settings</h2>
+        <p>
+            The app stores only your display preference (light/dark mode)
+            locally on your device using Android SharedPreferences.
+            This data never leaves your device.
+        </p>
+
+        <h2>5. Third-Party Services &amp; Analytics</h2>
+        <p>
+            This app uses <strong>no</strong> analytics services,
+            tracking tools, advertising libraries, or any third-party services.
+        </p>
+
+        <h2>6. Contact</h2>
+        <p>
+            If you have any questions about this privacy policy, please contact:<br>
+            <a href="mailto:entwickler-team@gmx.de">entwickler-team@gmx.de</a>
+        </p>
+
+        <div class="footer">
+            <p>© 2026 Alexander Nießen · Last updated: March 2026</p>
+        </div>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            document.getElementById('content-de').style.display = lang === 'de' ? 'block' : 'none';
+            document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+            document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.documentElement.lang = lang;
+        }
+    </script>
 
 </body>
 </html>
